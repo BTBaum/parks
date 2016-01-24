@@ -5,8 +5,8 @@
 <body>
   <h1>National Park App</h1>
 
-  {{#each parks}}
-    <li>{{Name}}: {{pos}}</li>
+  {{#each park}}
+    <li class="park {{selectedClass}}"> {{Name}}: {{pos}} </li>
   {{/each}}
 </body>
 
