@@ -20,25 +20,26 @@ if (Meteor.isClient) {
         return "selected"
       }
     },
-
   });
 
   Template.body.events({
+    'submit form': function() {
+      event.preventDefault();
+      console.log("Form submitted");
+      var parkName = event.target.parkName.value;
+      var lon = parseFloat(event.target.lon.value);
+      var lat = parseFloat(event.target.lat.value);
+      Parks.insert({
+        "Name": parkName,
+        "pos" : [lon, lat]
+      })
+    },
     'click .park': function() {
       var parkId = this._id.valueOf();
       var pos = this.pos;
       Session.set('selectedPark', parkId);
       Session.set('selectedParkPos', pos);
-    },
-    // 'submit form': function() {
-    //   console.log("Form was submitted...like a BOSS");
-    // }
+    }
   });
+  
 }
-
-// if (Meteor.isServer) {
-//   Meteor.methods({
-//     'sendLogMessage': function() {
-//       console.log('you just clicked a button that did server stuff!!!');
-//     }
-//   });
