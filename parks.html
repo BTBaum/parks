@@ -26,7 +26,6 @@
   <div class="parkForm col-xs-6">
     {{> addParkForm}}
   </div>
-
 </body>
 
 <template name="addParkForm">
@@ -43,6 +42,7 @@
       <label>Latitude</label>
       <input type="number" name="lat" class="form-control" placeholder="Latitude">
     </div>
-    <button type="submit" value="Add Park" class="btn btn-default">Submit</button>
+    <button type="submit" value="Add Park" class="btn btn-primary btn-block">Add Park</button>
+    <button type="button" value="Remove Park" class="remove btn btn-danger btn-block">Remove Park</button>
   </form>
 </template>

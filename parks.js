@@ -25,7 +25,6 @@ if (Meteor.isClient) {
   Template.body.events({
     'submit form': function() {
       event.preventDefault();
-      console.log("Form submitted");
       var parkName = event.target.parkName.value;
       var lon = parseFloat(event.target.lon.value);
       var lat = parseFloat(event.target.lat.value);
@@ -34,6 +33,10 @@ if (Meteor.isClient) {
         "pos" : [lon, lat]
       })
     },
+    'click .remove': function() {
+      var selectedPark = Session.get('selectedPark');
+      Parks.remove(selectedPark);
+    },
     'click .park': function() {
       var parkId = this._id.valueOf();
       var pos = this.pos;
@@ -41,5 +44,5 @@ if (Meteor.isClient) {
       Session.set('selectedParkPos', pos);
     }
   });
-  
+
 }
