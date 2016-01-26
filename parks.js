@@ -19,7 +19,8 @@ if (Meteor.isClient) {
       if(selectedId == "a" + selectedPark) {
         return "selected"
       }
-    }
+    },
+
   });
 
   Template.body.events({
@@ -28,10 +29,16 @@ if (Meteor.isClient) {
       var pos = this.pos;
       Session.set('selectedPark', parkId);
       Session.set('selectedParkPos', pos);
-    }
+    },
+    // 'submit form': function() {
+    //   console.log("Form was submitted...like a BOSS");
+    // }
   });
 }
 
-if (Meteor.isServer) {
-
-}
+// if (Meteor.isServer) {
+//   Meteor.methods({
+//     'sendLogMessage': function() {
+//       console.log('you just clicked a button that did server stuff!!!');
+//     }
+//   });

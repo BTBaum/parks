@@ -1,3 +1,14 @@
 .selected {
   background-color: cornflowerBlue;
 }
+
+.allParks {
+  max-width: 500px;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.parkForm {
+  max-width: 200px;
+  padding-top: 50px;
+}
