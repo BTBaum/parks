@@ -31,7 +31,9 @@ if (Meteor.isClient) {
       Parks.insert({
         "Name": parkName,
         "pos" : [lon, lat]
-      })
+      });
+      var form = document.getElementById("form");
+      form.reset();
     },
     'click .remove': function() {
       var selectedPark = Session.get('selectedPark');
