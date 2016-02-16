@@ -1,7 +1,7 @@
 # parks
 national park app built with meteor
 
-You will need to install meteor
+you will need to install meteor
 
 run meteor and then mongoimport the parks.json file to --db meteor --collections parks in mongo
 
